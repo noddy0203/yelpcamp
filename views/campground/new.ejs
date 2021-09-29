@@ -1,0 +1,65 @@
+<% layout("layouts/boilerplate") %>
+
+
+<!--using clint side validation with bootstrap to do this use required in every field and use "novalidate in strating form tag" and giving class in form then use bootstrap js thing-->
+
+<form action="/campgrounds" method="post" novalidate class="validated-form needs-validation" enctype="multipart/form-data">
+    <div class="row">
+        <h1 class="text-center">New Campground</h1>
+        <div class="col-6 offset-3">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title:</label>
+                <input class="form-control" type="text" name="campground[title]" id="title" required
+                    placeholder="add title here" autofocus>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="locations">Locations:</label>
+                <input class="form-control" type="text" name="campground[locations]" id="locations" required
+                    placeholder="add location">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="mb-3">
+                    <label for="image" class="form-label">Upload images:</label>
+                    <input class="form-control" type="file" name="image" id="image" multiple>     
+            </div>
+
+
+            <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" id="price" name="campground[price]" class="form-control" required
+                        placeholder="00.00" aria-label="Username" aria-describedby="price-label">
+                </div>
+                <div class="invalid-feedback">
+                    <!--it will give invalid feedback-->
+                    Add the price in positive numbers.
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description:</label>
+                <input class="form-control" type="text" name="campground[description]" id="description" required
+                    placeholder="Mention details here">
+                <div class="invalid-feedback">
+                    <!--it will give invalid feedback-->
+                    Please add some thoughts.
+                </div>
+            </div>
+
+            <input class="btn btn-success" type="submit">
+</form>
+<a href="/campgrounds">Show All</a>
+
+</div>
+
+</div>
+
+<!--using javascript codes here for client side validations Which is given by bootstrap-->
